@@ -6,8 +6,18 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58
 {
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/hoolitek/php-classes/src',
+    public static $prefixLengthsPsr4 = array (
+        'H' => 
+        array (
+            'Hoolitek\\' => 9,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Hoolitek\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hoolitek/php-classes/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -41,7 +51,8 @@ class ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->fallbackDirsPsr4 = ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58::$fallbackDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit0f816554c2fc2d356489fc3af73a7a58::$classMap;
 
