@@ -2,18 +2,18 @@
 
 require_once("vendor/autoload.php");
 
-$app = new \Slim\Slim();
+use \Slim\Slim;
+use \Hoolitek\Page;
+
+$app = new Slim();
 
 $app->config('debug', true);
 
 $app->get('/', function() {
     
-	$sql = new Hoolitek\DB\Sql();
+	$page = new Page();
 
-	$results = $sql->select("SELECT * FROM tb_user");
-
-	echo json_encode($results);
-
+	$page->setTpl("index"); 
 });
 
 $app->run();
